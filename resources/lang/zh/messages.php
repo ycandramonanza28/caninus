@@ -33,5 +33,6 @@ return [
     'faq desc2' => '',
     'faq title3' => 'Caninus Dental House 的发展历程和成就',
     'faq desc3' => '',
-    'login' => '登录您的账户'
+    'login' => '登录您的账户',
+    'Sign_In' => '登入'
 ];

@@ -92,6 +92,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     <nav class="navbar navbar-expand-lg navbar-white bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">

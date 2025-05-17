@@ -91,7 +91,7 @@
                             }
 
                             h2 {
-                                color: #2b6cb0;
+                                color: #937D41;
                                 margin-bottom: 12px;
                                 font-size: 24px;
                             }
@@ -103,7 +103,7 @@
                             }
 
                             strong {
-                                color: #2b6cb0;
+                                color: #937D41;
                             }
 
                             @media (max-width: 600px) {
@@ -132,8 +132,8 @@
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="mb-3">
-                                    <input type="email" class="form-control rounded-3" id="email" name="email"
-                                        placeholder="Email" required>
+                                    <input type="text" class="form-control rounded-3" id="text" name="login"
+                                        placeholder="Email / ID" value="{{ old('login') }}" required>
                                 </div>
 
                                 <div class="mb-3">
@@ -142,7 +142,7 @@
                                 </div>
 
                                 <button type="submit" class="btn btn-primary w-100 rounded-3"
-                                    style="background-color: #928036 !important">Sign In</button>
+                                    style="background-color: #928036 !important">{{ __('messages.Sign_In') }}</button>
                             </form>
                         </div>
                     </div>

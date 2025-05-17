@@ -70,7 +70,7 @@ Route::middleware(['language'])->group(function () {
             ->get();
  
         return view('frontend.membership', compact('activeVouchers'));
-    });
+    })->name('membership');
 
 
     Route::get('/privacy-policy', function () {

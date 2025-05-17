@@ -93,7 +93,7 @@
         <p>
             Simpan informasi tersebut dengan baik demi keamanan akun Anda.
         </p>
-        <a href="{{ url('/login') }}" class="btn-login">Menuju Halaman Login</a>
+        <a href="{{ route('membership') }}" class="btn-login">Menuju Halaman Login</a>
     </div>
 </body>
 

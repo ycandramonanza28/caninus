@@ -33,5 +33,6 @@ return [
     'faq desc2' => '',
     'faq title3' => 'Perjalanan & Capaian Caninus Dental House',
     'faq desc3' => '',
-    'login' => 'Masuk ke Akun Anda'
+    'login' => 'Masuk ke Akun Anda',
+    'Sign_In' => 'Masuk'
 ];
