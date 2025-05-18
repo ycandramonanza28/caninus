@@ -6,6 +6,7 @@ use App\Http\Requests\PatientRequest;
 use App\Http\Requests\PatientUpdateRequest;
 use App\Models\Patient;
 use App\Services\PatientService;
+use Illuminate\Http\Request;
 
 class PatientController extends Controller
 {
@@ -19,11 +20,22 @@ class PatientController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+
+
+    public function index(Request $request)
     {
-        $patients = Patient::all();
-        return view('patient', compact('patients'));
+        $search = $request->input('search');
+
+        $patients = Patient::when($search, function ($query, $search) {
+                $query->where('name', 'like', '%' . $search . '%');
+            })
+            ->orderBy('id', 'desc')
+            ->paginate(5)
+            ->appends(['search' => $search]); // supaya keyword tetap ada saat klik pagination
+
+        return view('patient', compact('patients', 'search'));
     }
+
 
     /**
      * Show the form for creating a new resource.

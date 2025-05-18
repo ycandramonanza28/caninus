@@ -61,7 +61,7 @@ class AuthenticatedSessionController extends Controller
             ]);
         } elseif (Auth::user()->hasRole('user')) {
             Auth::logout();
-            Alert::toast('Akun Anda tidak aktif. Silakan hubungi administrator.', 'error');
+            Alert::toast('Akun belum aktif. Verifikasi email Anda untuk melanjutkan.', 'error');
             return redirect()->route('membership')->withErrors([
                 'status' => 'Akun Anda tidak aktif.',
             ]);

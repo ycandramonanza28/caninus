@@ -31,7 +31,7 @@ class PatientUpdateRequest extends FormRequest
             'emergency_number' => 'nullable|string|max:15',
             'date_of_birth' => 'required|date',
             'email' => [
-                'required',
+                'nullable',
                 'email',
                 'max:150',
                 Rule::unique('patients', 'email')->ignore($this->route('id')), // Abaikan email pasien yang sedang diedit
@@ -62,7 +62,7 @@ class PatientUpdateRequest extends FormRequest
             'emergency_number.max' => 'Nomor darurat tidak boleh lebih dari 15 karakter.',
             'date_of_birth.required' => 'Tanggal lahir wajib diisi.',
             'date_of_birth.date' => 'Tanggal lahir harus berupa tanggal yang valid.',
-            'email.required' => 'Email wajib diisi.',
+            // 'email.required' => 'Email wajib diisi.',
             'email.email' => 'Email harus berupa alamat email yang valid.',
             'email.max' => 'Email tidak boleh lebih dari 150 karakter.',
             // 'address.required' => 'Alamat wajib diisi.',

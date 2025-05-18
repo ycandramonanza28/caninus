@@ -1,503 +1,412 @@
 @extends('layouts.backend.master')
 @section('content')
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
+
+        :root {
+            --hue-color: 240;
+
+            --first-color: hsl(var(--hue-color), 53%, 49%);
+            --title-color: hsl(var(--hue-color), 53%, 15%);
+            --text-color: hsl(var(--hue-color), 12%, 35%);
+            --text-color-light: hsl(var(--hue-color), 12%, 65%);
+            --white-color: #FFFFFF;
+            --body-color: hsl(var(--hue-color), 24%, 94%);
+
+            --body-font: 'Poppins', sans-serif;
+            --signature-font: 'Turret Road', sans-serif;
+
+            --biggest-font-size: 3rem;
+            --small-font-size: .813rem;
+            --smaller-font-size: .75rem;
+            --tiny-font-size: .625rem;
+
+            --font-medium: 500;
+
+            --mb-0-25: .25rem;
+            --mb-1: 1rem;
+            --mb-1-5: 1.5rem;
+            --mb-2-5: 2.5rem;
+
+            --z-normal: 1;
+            --z-tooltip: 10;
+        }
+
+        body.dark-theme {
+            --title-color: hsl(var(--hue-color), 12%, 95%);
+            --text-color: hsl(var(--hue-color), 12%, 75%);
+            --body-color: hsl(var(--hue-color), 10%, 16%);
+        }
+
+        @media screen and (min-width: 968px) {
+            :root {
+                --biggest-font-size: 3.5rem;
+                --small-font-size: .875rem;
+                --smaller-font-size: .813rem;
+                --tiny-font-size: .75rem;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--body-font);
+            background-color: var(--body-color);
+            color: var(--text-color);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 968px;
+            margin-left: var(--mb-1);
+            margin-right: var(--mb-1);
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .clock-container {
+            height: 100vh;
+            grid-template-rows: 1fr max-content;
+        }
+
+        .clock-circle {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            grid-template-rows: 1fr max-content !important;
+            box-shadow: -6px -6px 16px var(--white-color),
+                6px 6px 16px hsla(var(--hue-color), 30%, 86%, 1),
+                inset 6px 6px 16px hsla(var(--hue-color), 30%, 86%, 1),
+                inset -6px -6px 16px var(--white-color);
+            border-radius: 50%;
+            justify-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Tambahan ini buat gambar background */
+            background-image: url('{{ asset('img/logo.png') }}');
+            /* pastikan path gambarnya benar */
+            background-size: 100px 100px;
+            /* supaya gambar memenuhi lingkaran */
+            background-position: center;
+            /* gambar di tengah */
+            background-repeat: no-repeat;
+            /* gambar tidak diulang */
+        }
+
+
+        .clock-content {
+            align-self: center;
+            row-gap: 3.5rem;
+        }
+
+        .clock-twelve,
+        .clock-three,
+        .clock-six,
+        .clock-nine {
+            position: absolute;
+            width: 1rem;
+            height: 1px;
+            background-color: var(--text-color-light);
+        }
+
+        .clock-twelve,
+        .clock-six {
+            transform: translateX(-50%) rotate(90deg);
+        }
+
+        .clock-twelve {
+            top: 1.25rem;
+            left: 50%;
+        }
+
+        .clock-six {
+            bottom: 1.25rem;
+            left: 50%;
+        }
+
+        .clock-three {
+            top: 50%;
+            right: 0.75rem;
+        }
+
+        .clock-nine {
+            left: 0.75rem;
+            top: 50%;
+        }
+
+        .clock-rounder {
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: var(--first-color);
+            border-radius: 50%;
+            border: 2px solid var(--body-color);
+            z-index: var(--z-tooltip);
+        }
+
+        .clock-hour,
+        .clock-minutes,
+        .clock-seconds {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+        }
+
+        .clock-hour {
+            width: 105px;
+            height: 105px;
+        }
+
+        .clock-hour::before {
+            content: '';
+            position: absolute;
+            background-color: var(--text-color);
+            width: 0.25rem;
+            height: 3rem;
+            border-radius: .75rem;
+            z-index: var(--z-normal);
+        }
+
+        .clock-minutes {
+            width: 136px;
+            height: 136px;
+        }
+
+        .clock-minutes::before {
+            content: '';
+            position: absolute;
+            background-color: var(--text-color);
+            width: 0.25rem;
+            height: 4rem;
+            border-radius: .75rem;
+            z-index: var(--z-normal);
+        }
+
+        .clock-seconds {
+            width: 130px;
+            height: 130px;
+        }
+
+        .clock-seconds::before {
+            content: '';
+            position: absolute;
+            background-color: var(--first-color);
+            width: 0.125rem;
+            height: 5rem;
+            border-radius: .75rem;
+            z-index: var(--z-normal);
+        }
+
+        .clock-logo {
+            width: max-content;
+            justify-self: center;
+            margin-bottom: var(--mb-2-5);
+            font-size: var(--smaller-font-size);
+            font-weight: var(--font-medium);
+            color: var(--text-color-light);
+            transition: .5s;
+            font-family: var(--signature-font);
+        }
+
+        .clock-logo:hover {
+            color: var(--first-color);
+        }
+
+        .clock-text {
+            display: flex;
+            justify-content: center;
+        }
+
+        .clock-text-hour,
+        .clock-text-minutes {
+            font-size: var(--biggest-font-size);
+            font-weight: var(--font-medium);
+            color: var(--title-color);
+        }
+
+        .clock-text-ampm {
+            font-size: var(--tiny-font-size);
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+            margin-left: var(--mb-0-25);
+        }
+
+        .clock-date {
+            text-align: center;
+            font-size: var(--small-font-size);
+            font-weight: var(--font-medium);
+        }
+
+        .clock-theme {
+            position: absolute;
+            top: -1rem;
+            right: -1rem;
+            display: flex;
+            padding: 0.25rem;
+            border-radius: 50%;
+            box-shadow: inset -1px -1px 1px hsla(var(--hue-color), 0%, 100%, 1), inset 1px 1px 1px hsla(var(--hue-color), 30%, 86%, 1);
+            color: var(--first-color);
+            cursor: pointer;
+        }
+
+        .dark-theme .clock-circle {
+            box-shadow: 6px 6px 6px hsla(var(--hue-color), 8%, 12%, 1), -6px -6px 16px hsla(var(--hue-color), 8%, 20%, 1), inset -6px -6px 16px hsla(var(--hue-color), 8%, 20%, 1), inset 6px 6px 12px hsla(var(--hue-color), 8%, 12%, 1);
+        }
+
+        .dark-theme .clock-theme {
+            box-shadow: inset -1px -1px 1px hsla(var(--hue-color), 8%, 20%, 1), inset 1px 1px 1px hsla(var(--hue-color), 8%, 12%, 1);
+        }
+
+        @media screen and (min-width: 968px) {
+            .container {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .clock-logo {
+                margin-bottom: 3rem;
+            }
+        }
+    </style>
     <!-- Content wrapper -->
     <div class="content-wrapper">
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
-            <div class="row">
-                <div class="col-lg-8 mb-4 order-0">
-                    <div class="card">
-                        <div class="d-flex align-items-end row">
-                            <div class="col-sm-7">
-                                <div class="card-body">
-                                    <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
-                                    <p class="mb-4">
-                                        You have done <span class="fw-bold">72%</span> more sales today.
-                                        Check your new badge in
-                                        your profile.
-                                    </p>
 
-                                    <a href="javascript:;" class="btn btn-sm btn-outline-primary">View
-                                        Badges</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-5 text-center text-sm-left">
-                                <div class="card-body pb-0 px-0 px-md-4">
-                                    <img src="../assets/img/illustrations/man-with-laptop-light.png" height="140"
-                                        alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png"
-                                        data-app-light-img="illustrations/man-with-laptop-light.png" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 order-1">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12 col-6 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title d-flex align-items-start justify-content-between">
-                                        <div class="avatar flex-shrink-0">
-                                            <img src="../assets/img/icons/unicons/chart-success.png" alt="chart success"
-                                                class="rounded" />
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                <i class="bx bx-dots-vertical-rounded"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                                                <a class="dropdown-item" href="javascript:void(0);">View
-                                                    More</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="fw-semibold d-block mb-1">Profit</span>
-                                    <h3 class="card-title mb-2">$12,628</h3>
-                                    <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
-                                        +72.80%</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 col-6 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title d-flex align-items-start justify-content-between">
-                                        <div class="avatar flex-shrink-0">
-                                            <img src="../assets/img/icons/unicons/wallet-info.png" alt="Credit Card"
-                                                class="rounded" />
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                <i class="bx bx-dots-vertical-rounded"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                                                <a class="dropdown-item" href="javascript:void(0);">View
-                                                    More</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span>Sales</span>
-                                    <h3 class="card-title text-nowrap mb-1">$4,679</h3>
-                                    <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
-                                        +28.42%</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <body>
+                <section class="clock container">
+                    <div class="clock-container grid">
+                        <div class="clock-content grid">
+                            <div class="clock-circle">
+                                <span class="clock-twelve"></span>
+                                <span class="clock-three"></span>
+                                <span class="clock-six"></span>
+                                <span class="clock-nine"></span>
 
-                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
-                    <div class="card">
-                        <div class="row row-bordered g-0">
-                            <div class="col-md-8">
-                                <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
-                                <div id="totalRevenueChart" class="px-2"></div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <div class="dropdown">
-                                            <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button"
-                                                id="growthReportId" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                2022
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">
-                                                <a class="dropdown-item" href="javascript:void(0);">2021</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">2020</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">2019</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="growthChart"></div>
-                                <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>
+                                <div class="clock-rounder"></div>
+                                <div class="clock-hour" id="clock-hour"></div>
+                                <div class="clock-minutes" id="clock-minutes"></div>
+                                <div class="clock-seconds" id="clock-seconds"></div>
 
-                                <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
-                                    <div class="d-flex">
-                                        <div class="me-2">
-                                            <span class="badge bg-label-primary p-2"><i
-                                                    class="bx bx-dollar text-primary"></i></span>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <small>2022</small>
-                                            <h6 class="mb-0">$32.5k</h6>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="me-2">
-                                            <span class="badge bg-label-info p-2"><i
-                                                    class="bx bx-wallet text-info"></i></span>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <small>2021</small>
-                                            <h6 class="mb-0">$41.2k</h6>
-                                        </div>
-                                    </div>
+                                <div class="clock-theme">
+                                    <i class="bx bxs-moon" id="theme-button"></i>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
-                    <div class="row">
-                        <div class="col-6 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title d-flex align-items-start justify-content-between">
-                                        <div class="avatar flex-shrink-0">
-                                            <img src="../assets/img/icons/unicons/paypal.png" alt="Credit Card"
-                                                class="rounded" />
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="btn p-0" type="button" id="cardOpt4"
-                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="bx bx-dots-vertical-rounded"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
-                                                <a class="dropdown-item" href="javascript:void(0);">View
-                                                    More</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="d-block mb-1">Payments</span>
-                                    <h3 class="card-title text-nowrap mb-2">$2,456</h3>
-                                    <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i>
-                                        -14.82%</small>
+                            <div>
+                                <div class="clock-text">
+                                    <div class="clock-text-hour" id="text-hour"></div>
+                                    <div class="clock-text-minutes" id="text-minutes"></div>
+                                    <div class="clock-text-ampm" id="text-ampm"></div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-6 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title d-flex align-items-start justify-content-between">
-                                        <div class="avatar flex-shrink-0">
-                                            <img src="../assets/img/icons/unicons/cc-primary.png" alt="Credit Card"
-                                                class="rounded" />
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="btn p-0" type="button" id="cardOpt1"
-                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="bx bx-dots-vertical-rounded"></i>
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                                                <a class="dropdown-item" href="javascript:void(0);">View
-                                                    More</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="fw-semibold d-block mb-1">Transactions</span>
-                                    <h3 class="card-title mb-2">$14,857</h3>
-                                    <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
-                                        +28.14%</small>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- </div>
-                        <div class="row"> -->
-                        <div class="col-12 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
-                                        <div
-                                            class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
-                                            <div class="card-title">
-                                                <h5 class="text-nowrap mb-2">Profile Report</h5>
-                                                <span class="badge bg-label-warning rounded-pill">Year
-                                                    2021</span>
-                                            </div>
-                                            <div class="mt-sm-auto">
-                                                <small class="text-success text-nowrap fw-semibold"><i
-                                                        class="bx bx-chevron-up"></i> 68.2%</small>
-                                                <h3 class="mb-0">$84,686k</h3>
-                                            </div>
-                                        </div>
-                                        <div id="profileReportChart"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Order Statistics -->
-                <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header d-flex align-items-center justify-content-between pb-0">
-                            <div class="card-title mb-0">
-                                <h5 class="m-0 me-2">Order Statistics</h5>
-                                <small class="text-muted">42.82k Total Sales</small>
-                            </div>
-                            <div class="dropdown">
-                                <button class="btn p-0" type="button" id="orederStatistics" data-bs-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
-                                    <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <div class="d-flex flex-column align-items-center gap-1">
-                                    <h2 class="mb-2">8,258</h2>
-                                    <span>Total Orders</span>
-                                </div>
-                                <div id="orderStatisticsChart"></div>
-                            </div>
-                            <ul class="p-0 m-0">
-                                <li class="d-flex mb-4 pb-1">
-                                    <div class="avatar flex-shrink-0 me-3">
-                                        <span class="avatar-initial rounded bg-label-primary"><i
-                                                class="bx bx-mobile-alt"></i></span>
-                                    </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                        <div class="me-2">
-                                            <h6 class="mb-0">Electronic</h6>
-                                            <small class="text-muted">Mobile, Earbuds, TV</small>
-                                        </div>
-                                        <div class="user-progress">
-                                            <small class="fw-semibold">82.5k</small>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="d-flex mb-4 pb-1">
-                                    <div class="avatar flex-shrink-0 me-3">
-                                        <span class="avatar-initial rounded bg-label-success"><i
-                                                class="bx bx-closet"></i></span>
-                                    </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                        <div class="me-2">
-                                            <h6 class="mb-0">Fashion</h6>
-                                            <small class="text-muted">T-shirt, Jeans, Shoes</small>
-                                        </div>
-                                        <div class="user-progress">
-                                            <small class="fw-semibold">23.8k</small>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="d-flex mb-4 pb-1">
-                                    <div class="avatar flex-shrink-0 me-3">
-                                        <span class="avatar-initial rounded bg-label-info"><i
-                                                class="bx bx-home-alt"></i></span>
-                                    </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                        <div class="me-2">
-                                            <h6 class="mb-0">Decor</h6>
-                                            <small class="text-muted">Fine Art, Dining</small>
-                                        </div>
-                                        <div class="user-progress">
-                                            <small class="fw-semibold">849k</small>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="avatar flex-shrink-0 me-3">
-                                        <span class="avatar-initial rounded bg-label-secondary"><i
-                                                class="bx bx-football"></i></span>
-                                    </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                        <div class="me-2">
-                                            <h6 class="mb-0">Sports</h6>
-                                            <small class="text-muted">Football, Cricket Kit</small>
-                                        </div>
-                                        <div class="user-progress">
-                                            <small class="fw-semibold">99</small>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!--/ Order Statistics -->
 
-                <!-- Expense Overview -->
-                <div class="col-md-6 col-lg-4 order-1 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header">
-                            <ul class="nav nav-pills" role="tablist">
-                                <li class="nav-item">
-                                    <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab"
-                                        data-bs-target="#navs-tabs-line-card-income"
-                                        aria-controls="navs-tabs-line-card-income" aria-selected="true">
-                                        Income
-                                    </button>
-                                </li>
-                                <li class="nav-item">
-                                    <button type="button" class="nav-link" role="tab">Expenses</button>
-                                </li>
-                                <li class="nav-item">
-                                    <button type="button" class="nav-link" role="tab">Profit</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-body px-0">
-                            <div class="tab-content p-0">
-                                <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
-                                    <div class="d-flex p-4 pt-3">
-                                        <div class="avatar flex-shrink-0 me-3">
-                                            <img src="../assets/img/icons/unicons/wallet.png" alt="User" />
-                                        </div>
-                                        <div>
-                                            <small class="text-muted d-block">Total Balance</small>
-                                            <div class="d-flex align-items-center">
-                                                <h6 class="mb-0 me-1">$459.10</h6>
-                                                <small class="text-success fw-semibold">
-                                                    <i class="bx bx-chevron-up"></i>
-                                                    42.9%
-                                                </small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="incomeChart"></div>
-                                    <div class="d-flex justify-content-center pt-4 gap-2">
-                                        <div class="flex-shrink-0">
-                                            <div id="expensesOfWeek"></div>
-                                        </div>
-                                        <div>
-                                            <p class="mb-n1 mt-1">Expenses This Week</p>
-                                            <small class="text-muted">$39 less than last week</small>
-                                        </div>
-                                    </div>
+                                <div class="clock-date">
+                                    <span id="date-day"></span>
+                                    <span id="date-month"></span>
+                                    <span id="date-year"></span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!--/ Expense Overview -->
 
-                <!-- Transactions -->
-                <div class="col-md-6 col-lg-4 order-2 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header d-flex align-items-center justify-content-between">
-                            <h5 class="card-title m-0 me-2">Transactions</h5>
-                            <div class="dropdown">
-                                <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                                    <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <ul class="p-0 m-0">
-                                <li class="d-flex mb-4 pb-1">
-                                    <div class="avatar flex-shrink-0 me-3">
-                                        <img src="../assets/img/icons/unicons/paypal.png" alt="User"
-                                            class="rounded" />
-                                    </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                        <div class="me-2">
-                                            <small class="text-muted d-block mb-1">Paypal</small>
-                                            <h6 class="mb-0">Send money</h6>
-                                        </div>
-                                        <div class="user-progress d-flex align-items-center gap-1">
-                                            <h6 class="mb-0">+82.6</h6>
-                                            <span class="text-muted">USD</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="d-flex mb-4 pb-1">
-                                    <div class="avatar flex-shrink-0 me-3">
-                                        <img src="../assets/img/icons/unicons/wallet.png" alt="User"
-                                            class="rounded" />
-                                    </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                        <div class="me-2">
-                                            <small class="text-muted d-block mb-1">Wallet</small>
-                                            <h6 class="mb-0">MacD</h6>
-                                        </div>
-                                        <div class="user-progress d-flex align-items-center gap-1">
-                                            <h6 class="mb-0">+270.69</h6>
-                                            <span class="text-muted">USD</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="d-flex mb-4 pb-1">
-                                    <div class="avatar flex-shrink-0 me-3">
-                                        <img src="../assets/img/icons/unicons/chart.png" alt="User"
-                                            class="rounded" />
-                                    </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                        <div class="me-2">
-                                            <small class="text-muted d-block mb-1">Transfer</small>
-                                            <h6 class="mb-0">Refund</h6>
-                                        </div>
-                                        <div class="user-progress d-flex align-items-center gap-1">
-                                            <h6 class="mb-0">+637.91</h6>
-                                            <span class="text-muted">USD</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="d-flex mb-4 pb-1">
-                                    <div class="avatar flex-shrink-0 me-3">
-                                        <img src="../assets/img/icons/unicons/cc-success.png" alt="User"
-                                            class="rounded" />
-                                    </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                        <div class="me-2">
-                                            <small class="text-muted d-block mb-1">Credit Card</small>
-                                            <h6 class="mb-0">Ordered Food</h6>
-                                        </div>
-                                        <div class="user-progress d-flex align-items-center gap-1">
-                                            <h6 class="mb-0">-838.71</h6>
-                                            <span class="text-muted">USD</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="d-flex mb-4 pb-1">
-                                    <div class="avatar flex-shrink-0 me-3">
-                                        <img src="../assets/img/icons/unicons/wallet.png" alt="User"
-                                            class="rounded" />
-                                    </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                        <div class="me-2">
-                                            <small class="text-muted d-block mb-1">Wallet</small>
-                                            <h6 class="mb-0">Starbucks</h6>
-                                        </div>
-                                        <div class="user-progress d-flex align-items-center gap-1">
-                                            <h6 class="mb-0">+203.33</h6>
-                                            <span class="text-muted">USD</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="avatar flex-shrink-0 me-3">
-                                        <img src="../assets/img/icons/unicons/cc-warning.png" alt="User"
-                                            class="rounded" />
-                                    </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                        <div class="me-2">
-                                            <small class="text-muted d-block mb-1">Mastercard</small>
-                                            <h6 class="mb-0">Ordered Food</h6>
-                                        </div>
-                                        <div class="user-progress d-flex align-items-center gap-1">
-                                            <h6 class="mb-0">-92.45</h6>
-                                            <span class="text-muted">USD</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        <a href="https://codepen.io/leonam-silva-de-souza" target="_blank" class="clock-logo">ULTRA CODE</a>
                     </div>
-                </div>
-            </div>
+                </section>
+            </body>
         </div>
     </div>
+    <script>
+        // Activating Clock
+
+        const hour = document.getElementById('clock-hour');
+        const minutes = document.getElementById('clock-minutes');
+        const seconds = document.getElementById('clock-seconds');
+
+        const clock = () => {
+            let date = new Date();
+            let hh = date.getHours() * 30;
+            let mm = date.getMinutes() * 6;
+            let ss = date.getSeconds() * 6;
+
+            hour.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+            minutes.style.transform = `rotateZ(${mm}deg)`;
+            seconds.style.transform = `rotateZ(${ss}deg)`;
+        }
+        setInterval(clock, 1000)
+
+        // Synchronizing hour and day
+
+        const textHour = document.getElementById('text-hour');
+        const textMinutes = document.getElementById('text-minutes');
+        const textAmPm = document.getElementById('text-ampm');
+        const dateDay = document.getElementById('date-day');
+        const dateMonth = document.getElementById('date-month');
+        const dateYear = document.getElementById('date-year');
+
+        const clockText = () => {
+            let date = new Date();
+            let hh = date.getHours(); // langsung 0-23
+            let mm = date.getMinutes();
+            let day = date.getDate();
+            let month = date.getMonth();
+            let year = date.getFullYear();
+
+            // Format jam: tambahkan 0 di depan jika kurang dari 10
+            if (hh < 10) {
+                hh = `0${hh}`;
+            }
+
+            // Format menit: tambahkan 0 di depan jika kurang dari 10
+            if (mm < 10) {
+                mm = `0${mm}`;
+            }
+
+            textHour.innerHTML = `${hh}:`;
+            textMinutes.innerHTML = mm;
+
+            // Hapus bagian AM/PM karena tidak dipakai di 24 jam format
+
+            let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            dateDay.innerHTML = day;
+            dateMonth.innerHTML = `${months[month]},`;
+            dateYear.innerHTML = year;
+        }
+        setInterval(clockText, 1000);
+
+
+        // Dark/Light Theme
+
+        const themeButton = document.getElementById('theme-button');
+        const darkTheme = 'dark-theme';
+        const iconTheme = 'bxs-sun';
+
+        const selectedTheme = localStorage.getItem('selected-theme');
+        const selectedIcon = localStorage.getItem('selected-icon');
+
+        const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+        const getCurrentIcon = () => themeButton.body.classList.contains(iconTheme) ? 'bxs-moon' : 'bxs-sun';
+
+        if (selectedTheme) {
+            document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+            themeButton.classList[selectedIcon === 'bxs-moon' ? 'add' : 'remove'](iconTheme);
+        }
+
+        themeButton.addEventListener('click', () => {
+            document.body.classList.toggle(darkTheme);
+            themeButton.classList.toggle(iconTheme);
+
+            localStorage.setItem('selected-theme', getCurrentTheme());
+            localStorage.setItem('selected-icon', getCurrentIcon());
+        })
+    </script>
 @endsection

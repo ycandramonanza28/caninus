@@ -26,7 +26,8 @@
                                     <div class="col-sm-10">
                                         <input type="text" name="name"
                                             class="form-control  @error('name') is-invalid @enderror" id="name"
-                                            placeholder="Masukan Nama ..." value="{{ old('name') ? old('name') : $patient['name'] }}" />
+                                            placeholder="Masukan Nama ..."
+                                            value="{{ old('name') ? old('name') : $patient['name'] }}" />
                                         @error('name')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -47,15 +48,15 @@
                                 </div>
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label" for="gender">Jenis Kelamin <span
-                                            class="text-danger">*</span></label>
+                                            class="text-grey" style="font-size: 10px"><i>(Opsional)</i></label>
                                     <div class="col-sm-10">
                                         <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1"
-                                            checked value="L" {{  $patient['gender'] == 'L' ? 'checked' :  '' }}>
+                                            checked value="L" {{ $patient['gender'] == 'L' ? 'checked' : '' }}>
                                         <label class="form-check-label" for="flexRadioDefault1">
                                             Laki-Laki
                                         </label>
                                         <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2"
-                                            value="P" {{  $patient['gender'] == 'P' ? 'checked' :  '' }}>
+                                            value="P" {{ $patient['gender'] == 'P' ? 'checked' : '' }}>
                                         <label class="form-check-label" for="flexRadioDefault2">
                                             Perempuan
                                         </label>
@@ -89,7 +90,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label" for="mobile_phone">Nomor HP <span
-                                            class="text-danger">*</span></label>
+                                            class="text-grey" style="font-size: 10px"><i>(Opsional)</i></label>
                                     <div class="col-sm-10">
                                         <input type="text" name="mobile_phone"
                                             class="form-control  @error('mobile_phone') is-invalid @enderror"
@@ -102,7 +103,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label" for="emergency_number">Nomor Emergency <span
-                                            class="text-danger">*</span></label>
+                                            class="text-grey" style="font-size: 10px"><i>(Opsional)</i></label>
                                     <div class="col-sm-10">
                                         <input type="text" name="emergency_number"
                                             class="form-control  @error('emergency_number') is-invalid @enderror"
@@ -138,23 +139,36 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-
                                 </div>
                                 <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="email">Email <span
-                                            class="text-danger">*</span></label>
+                                    <label class="col-sm-2 col-form-label" for="place_of_birth">Nomor Identitas <span
+                                            class="text-grey" style="font-size: 10px"><i>(Opsional)</i></span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="user_identity"
+                                            class="form-control  @error('place_of_birth') is-invalid @enderror"
+                                            id="place_of_birth" placeholder="Masukan Nomor Identitas ..."
+                                            value="{{ old('user_identity') ? old('user_identity') : $patient['user_identity'] }}" />
+                                        @error('user_identity')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-sm-2 col-form-label" for="email">Email <span class="text-grey"
+                                            style="font-size: 10px"><i>(Opsional)</i></label>
                                     <div class="col-sm-10">
                                         <input type="text" name="email"
                                             class="form-control  @error('email') is-invalid @enderror" id="email"
-                                            placeholder="Masukan Email ..."  value="{{ old('email') ? old('email') : $patient['email'] }}" />
+                                            placeholder="Masukan Email ..."
+                                            value="{{ old('email') ? old('email') : $patient['email'] }}" />
                                         @error('email')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="address">Alamat <span
-                                            class="text-danger">*</span></label>
+                                    <label class="col-sm-2 col-form-label" for="address">Alamat <span class="text-grey"
+                                            style="font-size: 10px"><i>(Opsional)</i></label>
                                     <div class="col-sm-10">
                                         <textarea type="text" name="address" class="form-control  @error('address') is-invalid @enderror" id="address"
                                             placeholder="Masukan Alamat ..." />{{ old('address') ? old('address') : $patient['address'] }}</textarea>

@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
+             $table->foreignId('user_id') // Foreign key ke users
+                ->constrained('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->string('name', 100);
             $table->enum('gender', ['L', 'P'])->comment('Jenis Kelamin: L untuk Laki-laki, P untuk Perempuan');
             $table->string('parents_name', 100)->nullable();
@@ -22,7 +26,7 @@ return new class extends Migration
             $table->string('emergency_number', 15)->nullable();
             $table->date('date_of_birth')->nullable();
             $table->string('place_of_birth', 100)->nullable();
-            $table->string('email', 150)->unique()->nullable();
+            $table->string('email', 150)->nullable();
             $table->string('user_identity', 150)->nullable();
             $table->text('address')->nullable();
             $table->string('the_referring', 100)->nullable();
