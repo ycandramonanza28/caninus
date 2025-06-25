@@ -91,19 +91,19 @@
             </div>
         </div>
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
+            <!-- <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
                     aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
-            </div>
+            </div> -->
 
             <div class="carousel-inner">
                 <!-- Slide 1 -->
                 <div class="carousel-item active">
-                    <img src="{{ asset('img/aboutus-banner.png') }}" class="d-block w-100" alt="..."
+                    <img src="{{ asset('img/aboutus-banner.png') }}" class="d-block w-100 mb-20" alt="..."
                         id="background-banner">
                     <div class="carousel-caption  top-0 rounded">
                         <div class="row group-banner">
@@ -119,8 +119,8 @@
                                 </p>
                             </div>
                             <div class="col-12 col-md-6 col-lg-6" align="center">
-                                <img src="{{ asset('img/founder.png') }}" class="img-fluid mt-3" width="350px"
-                                    style="border-radius: 10%; box-shadow: 1px 2px 5px rgb(105, 105, 105); margin-top: 30px !important;">
+                                <img src="{{ asset('img/doctor.png') }}" class="img-fluid mt-3" width="350px"
+                                    style="border-radius: 10%; box-shadow: 1px 2px 5px rgb(105, 105, 105); margin-top: 0px !important;">
                             </div>
                         </div>
                     </div>
@@ -235,31 +235,26 @@
                 </div>
             </div>
         </div>
-        <div id="carouselExampleCaptions" class="carousel slide mod">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
+        <!-- Desktop Carousel: dua dokter berdampingan, hanya tampil di desktop -->
+        <div id="carouselExampleCaptionsDesktop" class="carousel slide mod d-none d-md-block" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="{{ asset('img/aboutustrp.png') }}" class="d-block w-100" alt="Background Image"
-                        style="opacity: 0.2;">
-                    <div class="carousel-caption d-none d-md-block">
+                        style="opacity: 0.2; position: absolute; left: 0; top: 0; height: 100%; width: 100%; object-fit: cover; z-index: 0;">
+                    <div class="carousel-caption position-static" style="z-index: 1;">
                         <h1 class="title-mod mb-5">Meet Our Dentist</h1>
                         <div class="d-flex justify-content-center gap-5 flex-wrap">
                             <div class="card" style="width: 18rem;">
-                                <img src="{{ asset('img/doctor.png') }}" class="card-img-top" alt="Dentist Image">
+                                <img src="{{ asset('img/doctor.png') }}" class="card-img-top img-fluid" alt="Dentist Image"
+                                    style="object-fit: contain; height: 250px;">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">drg. Felicia</h5>
                                     <p class="card-text">Dentist</p>
                                 </div>
                             </div>
                             <div class="card" style="width: 18rem;">
-                                <img src="{{ asset('img/doctor1.png') }}" class="card-img-top" alt="Dentist Image">
+                                <img src="{{ asset('img/doctor1.png') }}" class="card-img-top img-fluid" alt="Dentist Image"
+                                    style="object-fit: contain; height: 250px;">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">drg. Inge Carolina</h5>
                                     <p class="card-text">Dentist</p>
@@ -269,13 +264,50 @@
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
+        </div>
+        <!-- Mobile Carousel: satu dokter per slide, hanya tampil di mobile -->
+        <div id="carouselExampleCaptionsMobile" class="carousel slide mod d-block d-md-none" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ asset('img/aboutustrp.png') }}" class="d-block w-100" alt="Background Image"
+                        style="opacity: 0.2; position: absolute; left: 0; top: 0; height: 100%; width: 100%; object-fit: cover; z-index: 0;">
+                    <div class="carousel-caption position-static" style="z-index: 1;">
+                        <h1 class="title-mod mb-5">Meet Our Dentist</h1>
+                        <div class="d-flex justify-content-center">
+                            <div class="card" style="width: 18rem;">
+                                <img src="{{ asset('img/doctor.png') }}" class="card-img-top img-fluid" alt="Dentist Image"
+                                    style="object-fit: contain; height: 250px;">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">drg. Inge Carolina</h5>
+                                    <p class="card-text">Dentist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('img/aboutustrp.png') }}" class="d-block w-100" alt="Background Image"
+                        style="opacity: 0.2; position: absolute; left: 0; top: 0; height: 100%; width: 100%; object-fit: cover; z-index: 0;">
+                    <div class="carousel-caption position-static" style="z-index: 1;">
+                        <h1 class="title-mod mb-5">Meet Our Dentist</h1>
+                        <div class="d-flex justify-content-center">
+                            <div class="card" style="width: 18rem;">
+                                <img src="{{ asset('img/doctor1.png') }}" class="card-img-top img-fluid" alt="Dentist Image"
+                                    style="object-fit: contain; height: 250px;">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">drg. Felicia</h5>
+                                    <p class="card-text">Dentist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptionsMobile" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptionsMobile" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>

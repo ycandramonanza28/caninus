@@ -213,7 +213,8 @@
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div id="carouselExample" class="carousel slide">
+                    <!-- Desktop Carousel: dua gambar berdampingan -->
+                    <div id="carouselExampleDesktop" class="carousel slide d-none d-md-block">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="d-flex justify-content-center gap-5">
@@ -222,11 +223,26 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    </div>
+                    <!-- Mobile Carousel: satu gambar per slide -->
+                    <div id="carouselExampleMobile" class="carousel slide d-block d-md-none">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="d-flex justify-content-center">
+                                    <img src="{{ asset('img/1.jpg') }}" alt="" style="width: 90vw; max-width: 350px;">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex justify-content-center">
+                                    <img src="{{ asset('img/2.jpg') }}" alt="" style="width: 90vw; max-width: 350px;">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleMobile" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleMobile" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
