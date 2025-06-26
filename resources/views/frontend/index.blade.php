@@ -33,6 +33,7 @@
             text-align: center;
             display: inline-block;
             color: black;
+            font-size: 2.2rem;
         }
 
         .title-solution::after {
@@ -45,9 +46,9 @@
             border-bottom: 5px solid #803D3C;
         }
 
-        .sub-title-solution {
+        /* .sub-title-solution {
             margin-top: -60px;
-        }
+        } */
 
         .title-our-service {
             margin-top: -10px;
@@ -71,7 +72,7 @@
             font-size: 20px;
             background-color: #937D41;
             color: #FFFF;
-            padding: 10px 80px 10px 80px;
+            padding: 10px 80px;
             border-radius: 20px;
             border: none;
         }
@@ -104,19 +105,34 @@
             box-shadow: 2px 2px 2px 2px #cbcbcb;
         }
 
+        @media (max-width: 1024px) {
+            .title-solution {
+                font-size: 1.5rem;
+            }
+
+            .title-our-service {
+                font-size: 1.5rem;
+            }
+
+            .btn-our-service {
+                font-size: 16px;
+                padding: 10px 40px;
+            }
+        }
+
         @media (max-width: 575.98px) {
             .title-solution {
                 margin-top: 20px;
-                font-size: 20px;font-size: 20px;
+                font-size: 1.1rem;
             }
 
-            .sub-title-solution img {
+            /* .sub-title-solution img {
                 width: 100%;
-            }
+            } */
 
-            .sub-title-solution .mt-style {
+            /* .sub-title-solution .mt-style {
                 margin-top: -150px;
-            }
+            } */
 
             .section-one {
                 padding-bottom: 150px;
@@ -127,18 +143,94 @@
             }
 
             .btn-our-service {
-                font-size: 16px;
-                padding: 10px 60px 10px 60px;
+                font-size: 14px;
+                padding: 8px 24px;
             }
 
             .btn-location {
                 font-size: 16px;
                 padding: 2px 20px 2px 20px;
             }
-         }
+
+            .sub-title-our-service img.img-fluid {
+                max-width: 250px;
+                width: 100%;
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+        }
+
+        .solution .row.g-0 > [class^="col-"] {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        .solution img {
+            margin-bottom: 0 !important;
+            display: block;
+        }
+
+        .solution-img {
+            max-width: 250px;
+            width: 100%;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        @media (min-width: 576px) {
+            .solution-img {
+                max-width: 180px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .solution-img {
+                max-width: 220px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .solution-img {
+                max-width: 350px;
+            }
+        }
+
+        .solution .row.g-0 > [class^="col-"] {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        @media (max-width: 991.98px) {
+            .solution .row.g-0 > [class^="col-"] {
+                margin-bottom: 12px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .solution .row.g-0 > [class^="col-"] {
+                margin-bottom: 0;
+            }
+        }
+
+        /* Responsive alignment for 'more' button */
+        @media (max-width: 767.98px) {
+            .sub-title-our-service .d-flex {
+                justify-content: center !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .sub-title-our-service .d-flex {
+                justify-content: flex-end !important;
+            }
+        }
     </style>
     <div class="wrapper">
-        <div id="carouselExample" class="carousel slide">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="{{ asset('img/Banner Home-02.jpg') }}" class="d-block w-100 img-fluid" alt="...">
@@ -156,50 +248,52 @@
                     <img src="..." class="d-block w-100" alt="...">
                 </div>  --}}
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
-            </button>
+            </button> -->
         </div>
         <div class="section-one">
             <div class="container solution">
                 <div class="row">
-                    <div class="col-12 col-lg-12 col-md-12 text-center">
+                    <div class="col-12 text-center">
                         <h1 class="title-solution">{!! __('messages.dental_care') !!}</h1>
                     </div>
                 </div>
-                <div class="row text-center sub-title-solution">
-                    <div class="col-12 col-lg-4 col-md-4">
-                        <img src="{{ asset('img/Assets-02.png') }}" alt="picture" width="420">
+                <div class="row text-center g-2 align-items-center justify-content-center mt-2">
+                    <div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0">
+                        <img src="{{ asset('img/Assets-02.png') }}" class="img-fluid solution-img" alt="picture">
                     </div>
-                    <div class="col-12 col-lg-4 col-md-4 mt-style">
-                        <img src="{{ asset('img/Assets-03.png') }}" alt="picture" width="420">
+                    <div class="col-12 col-md-4 d-flex justify-content-center mb-2 mb-md-0">
+                        <img src="{{ asset('img/Assets-03.png') }}" class="img-fluid solution-img" alt="picture">
                     </div>
-                    <div class="col-12 col-lg-4 col-md-4 mt-style">
-                        <img src="{{ asset('img/Assets-05.png') }}" alt="picture" width="420">
+                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                        <img src="{{ asset('img/Assets-05.png') }}" class="img-fluid solution-img" alt="picture">
                     </div>
                 </div>
             </div>
-            <div class="container our-service">
+            <div class="container our-service mt-5">
                 <div class="row">
                     <div class="col-12 col-lg-12 col-md-12 text-center">
                         <h1 class="title-our-service">{{ __('messages.our_service') }}
                         </h1>
                     </div>
                 </div>
-                <div class="row text-center sub-title-our-service">
-                    <div class="col-12 col-lg-4 col-md-4">
-                        <img src="{{ asset('img/Service-09.png') }}" alt="" width="400">
+                <div class="row text-center sub-title-our-service g-1 align-items-center">
+                    <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center mb-1 mb-lg-0">
+                        <img src="{{ asset('img/Service-09.png') }}" alt="" class="img-fluid">
                     </div>
-                    <div class="col-12 col-lg-4 col-md-4">
-                        <img src="{{ asset('img/Service-10.png') }}" alt="" width="400">
+                    <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center mb-1 mb-lg-0">
+                        <img src="{{ asset('img/Service-10.png') }}" alt="" class="img-fluid">
                     </div>
-                    <div class="col-12 col-lg4 col-md-4">
-                        <img src="{{ asset('img/Service-11.png') }}" alt="" width="400">
+                    <div class="col-12 col-lg-4 col-md-4 d-flex justify-content-center">
+                        <img src="{{ asset('img/Service-11.png') }}" alt="" class="img-fluid">
+                    </div>
+                    <div class="d-flex justify-content-end justify-content-md-end justify-content-center mt-2">
                         <button class="btn-our-service">{{ __('messages.more') }}</button>
                     </div>
                 </div>
@@ -217,24 +311,32 @@
                     <div id="carouselExampleDesktop" class="carousel slide d-none d-md-block">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <div class="d-flex justify-content-center gap-5">
-                                    <img src="{{ asset('img/1.jpg') }}" alt="" width="35%">
-                                    <img src="{{ asset('img/2.jpg') }}" alt="" width="35%">
+                                <div class="row justify-content-center g-3">
+                                    <div class="col-6 col-lg-4 d-flex justify-content-center">
+                                        <img src="{{ asset('img/1.jpg') }}" alt="" class="img-fluid rounded shadow-sm">
+                                    </div>
+                                    <div class="col-6 col-lg-4 d-flex justify-content-center">
+                                        <img src="{{ asset('img/2.jpg') }}" alt="" class="img-fluid rounded shadow-sm">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Mobile Carousel: satu gambar per slide -->
+                    <!-- Mobile & Tablet Carousel: satu gambar per slide -->
                     <div id="carouselExampleMobile" class="carousel slide d-block d-md-none">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <div class="d-flex justify-content-center">
-                                    <img src="{{ asset('img/1.jpg') }}" alt="" style="width: 90vw; max-width: 350px;">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <img src="{{ asset('img/1.jpg') }}" alt="" class="img-fluid rounded shadow-sm" style="max-width: 250px; width: 100%;">
+                                    </div>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <div class="d-flex justify-content-center">
-                                    <img src="{{ asset('img/2.jpg') }}" alt="" style="width: 90vw; max-width: 350px;">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <img src="{{ asset('img/2.jpg') }}" alt="" class="img-fluid rounded shadow-sm" style="max-width: 250px; width: 100%;">
+                                    </div>
                                 </div>
                             </div>
                         </div>
