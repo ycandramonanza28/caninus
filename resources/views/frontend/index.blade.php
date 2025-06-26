@@ -21,9 +21,8 @@
             background: url('{{ asset('img/Assets-01.png') }}') no-repeat bottom center;
             background-size: cover;
             position: relative;
-            min-height: 100vh;
-            /* Sesuaikan dengan tinggi konten */
-            padding-bottom: 250px;
+            /* min-height: 100vh; */
+            /* padding-bottom: 250px; */
             /* Pastikan wave tidak tertutup */
         }
 
@@ -135,7 +134,7 @@
             } */
 
             .section-one {
-                padding-bottom: 150px;
+                padding-bottom: 120px;
             }
 
             .sub-title-our-service img {
@@ -191,11 +190,19 @@
             .solution-img {
                 max-width: 220px;
             }
+
+             .section-one {
+                padding-bottom: 120px;
+            }
         }
 
         @media (min-width: 992px) {
             .solution-img {
                 max-width: 350px;
+            }
+
+            .section-one {
+                padding-bottom: 220px;
             }
         }
 
