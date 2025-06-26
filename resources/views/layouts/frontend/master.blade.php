@@ -117,12 +117,12 @@
                         href="https://wa.me/62811998208?text=Hi Caninus Dental House! saya mau konsultasi dan membuat janji temu dengan dokter gigi."
                         target="_blank">{{ __('messages.make_appointment') }}</a>
                     @php
-                        $locale = app()->getLocale();
-                        $flags = [
-                            'id' => 'img/flag.png',
-                            'en' => 'img/united-kingdom.png',
-                            'zh' => 'img/china.png',
-                        ];
+                    $locale = app()->getLocale();
+                    $flags = [
+                    'id' => 'img/flag.png',
+                    'en' => 'img/united-kingdom.png',
+                    'zh' => 'img/china.png',
+                    ];
                     @endphp
 
                     <div class="dropdown">
@@ -158,44 +158,44 @@
                     </div>
                     <!-- User Dropdown -->
                     @if (Auth::check())
-                        <div class="dropdown">
-                            <button class="btn btn-light btn-sm dropdown-toggle d-flex align-items-center"
-                                type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="{{ asset('assets/img/avatars/1.png') }}" alt="Avatar"
-                                    class="rounded-circle" width="30" height="30">
-                                <span class="ms-2">{{ ucfirst(Auth::user()->name) }}</span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0 me-2">
-                                                <img src="{{ asset('assets/img/avatars/1.png') }}" alt="Avatar"
-                                                    class="rounded-circle" width="40" height="40">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <span
-                                                    class="fw-semibold d-block">{{ ucfirst(Auth::user()->name) }}</span>
-                                                <small
-                                                    class="text-muted">{{ Auth::user()->getRoleNames()->implode(', ') }}</small>
-                                            </div>
+                    <div class="dropdown">
+                        <button class="btn btn-light btn-sm dropdown-toggle d-flex align-items-center"
+                            type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="{{ asset('assets/img/avatars/1.png') }}" alt="Avatar"
+                                class="rounded-circle" width="30" height="30">
+                            <span class="ms-2">{{ ucfirst(Auth::user()->name) }}</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 me-2">
+                                            <img src="{{ asset('assets/img/avatars/1.png') }}" alt="Avatar"
+                                                class="rounded-circle" width="40" height="40">
                                         </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="dropdown-divider"></div>
-                                </li>
-                                <li>
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <button class="dropdown-item" type="submit">
-                                            <i class="bx bx-power-off me-2"></i>
-                                            <span class="align-middle">Log Out</span>
-                                        </button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
+                                        <div class="flex-grow-1">
+                                            <span
+                                                class="fw-semibold d-block">{{ ucfirst(Auth::user()->name) }}</span>
+                                            <small
+                                                class="text-muted">{{ Auth::user()->getRoleNames()->implode(', ') }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="dropdown-divider"></div>
+                            </li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button class="dropdown-item" type="submit">
+                                        <i class="bx bx-power-off me-2"></i>
+                                        <span class="align-middle">Log Out</span>
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
                     @endif
                 </div>
             </div>
@@ -203,10 +203,10 @@
     </nav>
     @yield('content')
     <footer style="background-color: #FFFF">
-        <div class="container p-5">
+        <div class="container px-5 py-md-5 py-0">
             <div class="row">
-                <div class="col-12 col-lg-2 col-md-2 mt-3">
-                    <img src="{{ asset('img/logo.png') }}" width="120" alt="logo" class="mt-5">
+                <div class="col-12 col-lg-2 col-md-2">
+                    <img src="{{ asset('img/logo.png') }}" width="100" alt="logo" class="mt-5">
                 </div>
                 <div class="col-12 col-lg-5 col-md-5 mt-3">
                     <p><u><b>{{ __('messages.information') }}</b></u></p>
@@ -216,9 +216,11 @@
                             Khusus Ibukota
                             Jakarta 10120</span>
                         <div class="mt-1">
-                            <button class="btn-location-footer">
-                                <img src="{{ asset('img/Assets-04.png') }}" alt="" width="30">
-                                {{ __('messages.location') }}</button>
+                            <a href="https://maps.app.goo.gl/P9gN8v8nTr3K52aYA?g_st=aw">
+                                <button class="btn-location-footer">
+                                    <img src="{{ asset('img/Assets-04.png') }}" alt="" width="30">
+                                    {{ __('messages.location') }}</button>
+                            </a>
                         </div>
                     </div>
                     <div class="contact mt-3">
