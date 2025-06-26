@@ -386,7 +386,7 @@
                         </div>
                     </div>
                     <!-- Mobile & Tablet Carousel: satu gambar per slide -->
-                    <div id="carouselExampleMobile" class="carousel slide d-block d-md-none">
+                    <div id="carouselExampleMobile" class="carousel slide d-block d-md-none" data-bs-ride="carousel" data-bs-interval="4000">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="row justify-content-center">
@@ -413,9 +413,12 @@
                         </button>
                     </div>
                     <div class="text-center mt-5">
-                        <button class="btn-location">
+                        <a href="https://maps.app.goo.gl/P9gN8v8nTr3K52aYA?g_st=aw">
+                             <button class="btn-location">
                             <img src="{{ asset('img/Assets-04.png') }}" alt="" width="50">
                             {{ __('messages.location') }}</button>
+                        </a>
+                       
                     </div>
                 </div>
             </div>
