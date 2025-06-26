@@ -30,9 +30,9 @@ return [
     'faq title1' => 'Caninus Dental House 的想法从何而来？',
     'faq desc1' => 'Caninus”的概念诞生于 2021 年，是 Garry Gaven 和 drg 梦想的实现。 Inge Carolina 致力于打造高品质牙科诊所。自同年起，“Caninus Indonesia”名称已在知识产权总局正式注册，这体现了我们致力于提供最佳牙科保健服务的承诺。',
     'faq title2' => 'Caninus Dental House 的宗旨',
-    'faq desc2' => '',
+    'faq desc2' => 'Caninus Dental House 致力于成为一个注重舒适感、现代技术和专业服务的牙科护理解决方案。我们通过友好、教育性强、并具高标准的医疗与美学方式，来建立大众对牙科治疗的信任。',
     'faq title3' => 'Caninus Dental House 的发展历程和成就',
-    'faq desc3' => '',
+    'faq desc3' => '自2021年成立以来，Caninus Dental House 已为成千上万的患者提供了各种牙科护理服务。随着发展的步伐，Caninus 不断壮大，开设了第一家分店，扩展了包括数字微笑设计在内的服务，逐渐成为本地区的知名牙科推荐诊所。我们还积极参与各类教育活动，并与专业医疗人员合作，不断提升服务质量。',
     'login' => '登录您的账户',
     'Sign_In' => '登入'
 ];

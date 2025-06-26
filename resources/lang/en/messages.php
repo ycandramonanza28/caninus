@@ -30,9 +30,9 @@ return [
     'faq title1' => 'Where did the idea for Caninus Dental House come from?',
     'faq desc1' => 'The concept of "Caninus" was born in 2021 as the realization of the dream of Garry Gaven and drg. Inge Carolina in building a quality dental clinic. Since the same year, the name "Caninus Indonesia" has been officially registered with the Directorate General of Intellectual Property, affirming our commitment to providing the best dental health services.',
     'faq title2' => 'The purpose of Caninus Dental House',
-    'faq desc2' => '',
+    'faq desc2' => 'Caninus Dental House aims to be a dental care solution that prioritizes comfort, modern technology, and professional service. We strive to build public trust in dental treatment through a friendly, educational, and high-standard approach—both medically and aesthetically.',
     'faq title3' => 'Caninus Dental House Journey and Achievements',
-    'faq desc3' => '',
+    'faq desc3' => 'Since its establishment in 2021, Caninus Dental House has served thousands of patients with various dental care needs. Over time, Caninus has continued to grow—opening its first branch, expanding services such as digital smile design, and becoming a leading referral clinic in the region. We have also actively participated in educational initiatives and collaborations with healthcare professionals to continually improve service quality.',
     'login' => 'Login to Your Account',
     'Sign_In' => 'Sign In'
 ];

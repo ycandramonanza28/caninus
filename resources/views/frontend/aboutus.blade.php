@@ -212,7 +212,7 @@
                             </h2>
                             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                                 <div class="accordion-body" align="left">
-                                    {{ __('messages.faq desc1') }}
+                                    {{ __('messages.faq desc2') }}
                                 </div>
                             </div>
                         </div>
@@ -227,7 +227,7 @@
                             </h2>
                             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
                                 <div class="accordion-body" align="left">
-                                    {{ __('messages.faq desc1') }}
+                                    {{ __('messages.faq desc3') }}
                                 </div>
                             </div>
                         </div>
