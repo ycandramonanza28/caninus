@@ -9,12 +9,24 @@
         .btn-banner {
             font-weight: 600;
             font-size: 20px;
-            margin-top: -300px;
-            margin-left: 650px;
             border-radius: 20px;
             background-color: #803D3C;
             color: #FFFF;
             border: none;
+            padding: 10px 40px;
+            position: absolute;
+            right: 20vw;
+            top: 0;
+            transform: translateY(-50%);
+            margin: 0;
+            display: block;
+        }
+
+        .carousel-caption {
+            left: 0;
+            right: 0;
+            bottom: 20%;
+            text-align: right;
         }
 
         .section-one {
@@ -105,6 +117,17 @@
         }
 
         @media (max-width: 1024px) {
+            .btn-banner {
+                font-size: 16px;
+                padding: 8px 28px;
+                right: 3vw;
+            }
+
+            .carousel-caption {
+                bottom: 10%;
+                text-align: right;
+            }
+
             .title-solution {
                 font-size: 1.5rem;
             }
@@ -120,6 +143,39 @@
         }
 
         @media (max-width: 575.98px) {
+            .carousel-caption {
+                position: absolute !important;
+                background: none !important;
+                padding: 0 !important;
+                width: 100vw !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 4%;
+                z-index: 10 !important;
+                text-align: right;
+            }
+            .btn-banner {
+                font-size: 12px;
+                padding: 6px 12px;
+                position: absolute !important;
+                right: 8vw;
+                left: auto;
+                bottom: 12%;
+                top: auto;
+                transform: none;
+                margin: 0 !important;
+                display: inline-block !important;
+                z-index: 20 !important;
+                background: #803D3C !important;
+                color: #fff !important;
+                box-shadow: 1px 2px 5px rgb(145,145,145);
+            }
+
+            .carousel-caption {
+                bottom: 4%;
+                text-align: center;
+            }
+
             .title-solution {
                 margin-top: 20px;
                 font-size: 1.1rem;
@@ -241,10 +297,10 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="{{ asset('img/Banner Home-02.jpg') }}" class="d-block w-100 img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-block">
                         <a href="https://wa.me/62811998208?text=Hi Caninus Dental House! saya mau konsultasi dan membuat janji temu dengan dokter gigi."
                             target="_blank" style="list-style: none; text-decoration: none;">
-                            <button class="btn btn-light btn-banner">{{ __('messages.make_appointment') }}</button>
+                            <button class="btn btn-light btn-banner w-auto mx-auto">{{ __('messages.make_appointment') }}</button>
                         </a>
                     </div>
                 </div>
