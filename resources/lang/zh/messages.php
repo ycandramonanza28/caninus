@@ -34,5 +34,17 @@ return [
     'faq title3' => 'Caninus Dental House 的发展历程和成就',
     'faq desc3' => '自2021年成立以来，Caninus Dental House 已为成千上万的患者提供了各种牙科护理服务。随着发展的步伐，Caninus 不断壮大，开设了第一家分店，扩展了包括数字微笑设计在内的服务，逐渐成为本地区的知名牙科推荐诊所。我们还积极参与各类教育活动，并与专业医疗人员合作，不断提升服务质量。',
     'login' => '登录您的账户',
-    'Sign_In' => '登入'
+    'Sign_In' => '登入',
+    'square1' => '由拥有十多年经验的牙医处理',
+    'square2' => '采用最新技术，确保安全、舒适和高效的治疗',
+    'square3' => '干净、无菌且舒适的诊所，带来愉快的治疗体验',
+    'service1' => '牙齿填充',              // Tooth Filling
+    'service2' => '拔牙',                  // Tooth Extraction
+    'service3' => '洗牙',                  // Scaling
+    'service4' => '牙齿美白',              // Teeth Whitening
+    'service5' => '假牙',                  // Dentures
+    'service6' => '根管治疗',              // Root Canal Treatment
+    'service7' => '牙齿种植',              // Dental Implants
+
+
 ];

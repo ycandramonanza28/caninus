@@ -34,5 +34,16 @@ return [
     'faq title3' => 'Perjalanan & Capaian Caninus Dental House',
     'faq desc3' => 'Sejak berdiri tahun 2021, Caninus Dental House telah melayani ribuan pasien dengan berbagai kebutuhan perawatan gigi. Dalam perjalanannya, Caninus terus berkembang, mulai dari membuka cabang pertama, memperluas layanan seperti digital smile design, hingga menjadi salah satu klinik rujukan di wilayahnya. Kami juga telah aktif dalam berbagai kegiatan edukasi dan kolaborasi dengan tenaga kesehatan profesional untuk terus meningkatkan kualitas layanan.',
     'login' => 'Masuk ke Akun Anda',
-    'Sign_In' => 'Masuk'
+    'Sign_In' => 'Masuk',
+    'square1' => 'Ditangani oleh Dokter Gigi Berpengalaman Lebih dari Belasan Tahun',
+    'square2' => 'Menggunakan Teknologi Terbaru Untuk Memastikan Perawatan yang Aman, Nyaman, dan Efektif.',
+    'square3' => 'Klinik yang Bersih, Steril, dan Nyaman untuk Pengalaman Perawatan yang Menyenangkan',
+    'service1' => 'Penambalan Gigi',
+    'service2' => 'Pencabutan Gigi',
+    'service3' => 'Scaling',
+    'service4' => 'Pemutihan Gigi',
+    'service5' => 'Gigi Palsu',
+    'service6' => 'Perawatan Saluran Akar',
+    'service7' => 'Implan Gigi',
+
 ];

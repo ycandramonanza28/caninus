@@ -34,5 +34,15 @@ return [
     'faq title3' => 'Caninus Dental House Journey and Achievements',
     'faq desc3' => 'Since its establishment in 2021, Caninus Dental House has served thousands of patients with various dental care needs. Over time, Caninus has continued to grow—opening its first branch, expanding services such as digital smile design, and becoming a leading referral clinic in the region. We have also actively participated in educational initiatives and collaborations with healthcare professionals to continually improve service quality.',
     'login' => 'Login to Your Account',
-    'Sign_In' => 'Sign In'
+    'Sign_In' => 'Sign In',
+    'square1' => 'Handled by Dentists with Over a Decade of Experience',
+    'square2' => 'Utilizing the Latest Technology to Ensure Safe, Comfortable, and Effective Treatment',
+    'square3' => 'A Clean, Sterile, and Comfortable Clinic for a Pleasant Treatment Experience',
+    'service1' => 'Tooth Filling',
+    'service2' => 'Tooth Extraction',
+    'service3' => 'Scaling',
+    'service4' => 'Teeth Whitening',
+    'service5' => 'Dentures',
+    'service6' => 'Root Canal Treatment',
+    'service7' => 'Dental Implants',
 ];
