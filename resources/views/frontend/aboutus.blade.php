@@ -72,6 +72,25 @@
             width: 1000px
         }
 
+        .carousel-caption #aboutus-banner {
+            margin-top: -28%;
+            /* persentase supaya relatif ke tinggi gambar */
+            font-size: clamp(20px, 8vw, 100px);
+            /* min 20px, max 100px, scaling otomatis */
+        }
+
+        .founderbiography {
+            text-align: justify;
+        }
+
+        .vision-text {
+            text-align: justify;
+        }
+
+        .mission-text {
+            text-align: justify;
+        }
+
         @media (max-width: 575.98px) {
             #background-banner {
                 height: 1300px;
@@ -80,11 +99,11 @@
             .accordion-item {
                 width: 300px;
             }
-        }
 
-        .carousel-caption #aboutus-banner {
-            margin-top: -300px;
-            font-size: 100px;
+            .carousel-caption #aboutus-banner {
+                margin-top: -25%;
+                /* bisa disesuaikan agar tetap pas di HP */
+            }
         }
     </style>
     <div class="wrapper">
@@ -92,22 +111,13 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="{{ asset('img/Banner About-Us.jpg') }}" class="d-block w-100 img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption">
                         <h2 class="fw-bold" id="aboutus-banner"> {!! __('messages.aboutus') !!}</h2>
                     </div>
                 </div>
             </div>
         </div>
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <!-- <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                                aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                        </div> -->
-
             <div class="carousel-inner">
                 <!-- Slide 1 -->
                 <div class="carousel-item active">
@@ -122,7 +132,7 @@
                             <div class="col-12 col-md-6 col-lg-6" align="left" style="margin-top: 30px">
                                 <h1 class="title-founder-name">drg. Inge Carolina</h1>
                                 <h2 id="title-sub">Founder Caninus Dental House</h2>
-                                <p class="text-black">
+                                <p class="text-black founderbiography">
                                     {{ __('messages.founder_biography') }}
                                 </p>
                             </div>
@@ -133,28 +143,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Slide 2 -->
-                {{-- <div class="carousel-item">
-                        <img src="{{ asset('img/slide2.png') }}" class="d-block w-100" alt="...">
-            <div
-                class="carousel-caption position-absolute top-50 start-50 translate-middle text-center bg-dark bg-opacity-50 p-4 rounded">
-                <h5>Second Slide Title</h5>
-                <p>Deskripsi slide kedua yang menarik.</p>
-                <img src="{{ asset('img/image2.png') }}" class="img-fluid mt-3" style="max-width: 150px;">
-            </div>
-        </div> --}}
-
-                <!-- Slide 3 -->
-                {{-- <div class="carousel-item">
-                        <img src="{{ asset('img/slide3.png') }}" class="d-block w-100" alt="...">
-        <div
-            class="carousel-caption position-absolute top-50 start-50 translate-middle text-center bg-dark bg-opacity-50 p-4 rounded">
-            <h5>Third Slide Title</h5>
-            <p>Deskripsi slide ketiga yang menarik.</p>
-            <img src="{{ asset('img/image3.png') }}" class="img-fluid mt-3" style="max-width: 150px;">
-        </div>
-    </div> --}}
             </div>
 
             <!-- Tombol Navigasi Carousel -->
@@ -170,20 +158,20 @@
             </button>
         </div>
         <div class="container">
-            <div class="row vision-mission">
+            <div class="row">
                 <h1 class="text-center mt-5" id="title-vision-mission">{{ __('messages.vision and mission') }}</h1>
                 <div class="col-12 col-md-4 col-lg-4 text-center">
                     <h1>{{ __('messages.vision') }}</h1>
                 </div>
                 <div class="col-12 col-md-8 col-lg-8">
-                    <p> {{ __('messages.vision and mission title') }}
+                    <p class="vision-text"> {{ __('messages.vision and mission title') }}
                     </p>
                 </div>
                 <div class="col-12 col-md-4 col-lg-4 text-center">
                     <h1>{{ __('messages.mission') }}</h1>
                 </div>
                 <div class="col-12 col-md-8 col-lg-8">
-                    <ol>
+                    <ol class="mission-text">
                         <li>{{ __('messages.vmdesc1') }}</li>
                         <li>{{ __('messages.vmdesc2') }}</li>
                         <li>{{ __('messages.vmdesc3') }}</li>

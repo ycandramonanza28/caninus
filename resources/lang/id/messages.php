@@ -21,7 +21,7 @@ return [
     'vision' => 'Visi',
     'mission' => 'Misi',
     'vision and mission' => 'Visi dan Misi',
-    'vision and mission title' => 'Menjadi klinik gigi terkemuka yang menyediakan pelayanan kesehatan gigi berkualitas, terjangkau, dan ramah, dengan menggunakan teknologi terkini untuk meningkatkan kualitas hisup masyarakat melalui senyum yang sehat dan percaya diri',
+    'vision and mission title' => 'Menjadi klinik gigi terkemuka yang menyediakan pelayanan kesehatan gigi berkualitas,terjangkau, dan ramah, dengan menggunakan teknologi terkini untuk meningkatkan kualitas hisup masyarakat melalui senyum yang sehat dan percaya diri',
     'vmdesc1' => 'Memberikan Perawatan gigi yang profesional dan berkualitas tinggi dengan didukung oleh tenaga medis yang berkompeten dan berpengalaman.',
     'vmdesc2' => 'Menyediakan pelayanan yang nyaman, ramah dan terpercaya untuk setiap pasien, dengan pendekatan yang humanis dan personal.',
     'vmdesc3' => 'Mengedukasi masyarakat mengenai pentingnya menjaga kesehatan gigi dan mulut untuk mencegah penyakit gigi dan gusi.',
@@ -47,5 +47,6 @@ return [
     'service7' => 'Implan Gigi',
     'ourservice' => "Layanan Kami",
     'aboutus' => "Tentang Kami",
-    "bannermember" => "Bergabunglah dengan Keanggotaan Caninus!"
+    "bannermember" => "Bergabunglah dengan Keanggotaan Caninus!",
+    "alwaysmembership" => "Pasti Untung, Pasti Senyum!"
 ];

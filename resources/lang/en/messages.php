@@ -47,5 +47,6 @@ return [
     'service7' => 'Dental Implants',
     'ourservice' => "Our Services",
     'aboutus' => "About Us",
-    "bannermember" => "Join Membership Caninus!"
+    "bannermember" => "Join Membership Caninus!",
+    "alwaysmembership" => "Always Gain, Always Smile!"
 ];

@@ -47,5 +47,6 @@ return [
     'service7' => '牙齿种植',              // Dental Implants
     'ourservice' => "我们的服务",
     'aboutus' => "关于我们",
-    "bannermember" => "加入 Caninus 会员！"
+    "bannermember" => "加入 Caninus 会员！",
+    "alwaysmembership" => "一定赚，一定笑！"
 ];
