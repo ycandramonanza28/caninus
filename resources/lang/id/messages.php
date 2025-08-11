@@ -48,5 +48,6 @@ return [
     'ourservice' => "Layanan Kami",
     'aboutus' => "Tentang Kami",
     "bannermember" => "Bergabunglah dengan Keanggotaan Caninus!",
-    "alwaysmembership" => "Pasti Untung, Pasti Senyum!"
+    "alwaysmembership" => "Pasti Untung, Pasti Senyum!",
+    "privacycaninusdental" => "Kebijakan Privasi Caninus Dental"
 ];

@@ -48,5 +48,6 @@ return [
     'ourservice' => "我们的服务",
     'aboutus' => "关于我们",
     "bannermember" => "加入 Caninus 会员！",
-    "alwaysmembership" => "一定赚，一定笑！"
+    "alwaysmembership" => "一定赚，一定笑！",
+    "privacycaninusdental" => "卡尼纳斯牙科隐私政策"
 ];

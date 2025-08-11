@@ -31,7 +31,7 @@
     </style>
     <div class="wrapper">
         <div class="container mt-5 mb-5">
-            <h1 class="title-privacy-policy">Kebijakan Privasi Caninus Dental</h1>
+            <h1 class="title-privacy-policy">{!! __('messages.privacycaninusdental') !!} </h1>
             <div class="scroll-container">
                 <iframe src="{{ asset('Kebijakan.pdf') }}" width="100%" height="600px" style="border:none;"></iframe>
             </div>

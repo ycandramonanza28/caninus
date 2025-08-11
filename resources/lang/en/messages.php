@@ -48,5 +48,6 @@ return [
     'ourservice' => "Our Services",
     'aboutus' => "About Us",
     "bannermember" => "Join Membership Caninus!",
-    "alwaysmembership" => "Always Gain, Always Smile!"
+    "alwaysmembership" => "Always Gain, Always Smile!",
+    "privacycaninusdental" => "Caninus Dental Privacy Policy"
 ];

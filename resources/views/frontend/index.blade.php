@@ -455,7 +455,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-end justify-content-md-end justify-content-center mt-2">
-                        <button class="btn-our-service">{{ __('messages.more') }}</button>
+                        <a href="/services" class="btn-our-service" style="text-decoration: none">{{ __('messages.more') }}</a>
                     </div>
                 </div>
             </div>
