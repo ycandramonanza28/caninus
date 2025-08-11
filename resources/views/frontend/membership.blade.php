@@ -9,12 +9,21 @@
         .btn-join {
             font-size: 23px
         }
+
+        .carousel-caption #bannermember {
+            margin-top: -200px;
+            font-size: 50px;
+        }
     </style>
     <div class="wrapper">
         <div id="carouselExample" class="carousel slide mt-1">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="{{ asset('img/Banner membership.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="fw-bold" id="bannermember"> {!! __('messages.bannermember') !!}</h2>
+                        <span>Pasti Untung, Pasti Senyum !</span>
+                    </div>
                 </div>
             </div>
         </div>

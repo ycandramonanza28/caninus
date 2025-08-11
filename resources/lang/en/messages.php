@@ -45,4 +45,7 @@ return [
     'service5' => 'Dentures',
     'service6' => 'Root Canal Treatment',
     'service7' => 'Dental Implants',
+    'ourservice' => "Our Services",
+    'aboutus' => "About Us",
+    "bannermember" => "Join Membership Caninus!"
 ];

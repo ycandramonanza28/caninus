@@ -45,6 +45,7 @@ return [
     'service5' => '假牙',                  // Dentures
     'service6' => '根管治疗',              // Root Canal Treatment
     'service7' => '牙齿种植',              // Dental Implants
-
-
+    'ourservice' => "我们的服务",
+    'aboutus' => "关于我们",
+    "bannermember" => "加入 Caninus 会员！"
 ];
