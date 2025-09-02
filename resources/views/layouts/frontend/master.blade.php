@@ -225,20 +225,60 @@
                     </div>
                     <div class="contact mt-3">
                         <b>{{ __('messages.contact') }}</b><br>
-                        <span>0811-998-208</span>
+                        <span class="d-flex align-items-center">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color: #007bff; margin-right: 8px;">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            0811-998-208
+                        </span>
                     </div>
                     <div class="follow-us-on mt-3">
                         <b>{{ __('messages.follow_us_on') }}</b><br>
-                        <span>coninusdentalhouse</span>
+                        <span class="d-flex align-items-center">
+                            <a href="https://www.instagram.com/coninusdentalhouse" target="_blank" class="mx-2" style="text-decoration: none;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: #E4405F;">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            coninusdentalhouse
+                        </span>
                     </div>
                 </div>
                 <div class="col-12 col-lg-5 col-md-5 mt-3">
                     <p><u><b>{{ __('messages.clinic_name') }}</b></u></p>
                     <ul class="list-unstyled">
-                        <li class="mt-0"><a href=""><b>{{ __('messages.about_us') }}</b></a></li>
-                        <li class="mt-2"><a href=""><b>{{ __('messages.service') }}</b></a></li>
-                        <li class="mt-2"><a href=""><b>{{ __('messages.membership') }}</b></a></li>
-                        <li class="mt-2"><a href="/privacy-policy"><b>{{ __('messages.privacy_policy') }}</b></a></li>
+                        <li class="mt-0">
+                            <a href="" class="d-flex align-items-center" style="text-decoration: none;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color: #6c757d; margin-right: 8px;">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                                <b>{{ __('messages.about_us') }}</b>
+                            </a>
+                        </li>
+                        <li class="mt-2">
+                            <a href="" class="d-flex align-items-center" style="text-decoration: none;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color: #6c757d; margin-right: 8px;">
+                                    <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.5-0.24,0.97-0.56,1.39-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
+                                </svg>
+                                <b>{{ __('messages.service') }}</b>
+                            </a>
+                        </li>
+                        <li class="mt-2">
+                            <a href="" class="d-flex align-items-center" style="text-decoration: none;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color: #6c757d; margin-right: 8px;">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <b>{{ __('messages.membership') }}</b>
+                            </a>
+                        </li>
+                        <li class="mt-2">
+                            <a href="/privacy-policy" class="d-flex align-items-center" style="text-decoration: none;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color: #6c757d; margin-right: 8px;">
+                                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                                <b>{{ __('messages.privacy_policy') }}</b>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
