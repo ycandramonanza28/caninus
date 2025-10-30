@@ -18,6 +18,7 @@ return [
     'copyright_notice' => 'Hak Cipta © Caninus Dental House 2025. Seluruh Hak Dilindungi',
     'founder' => 'Pendiri',
     'founder_biography' => 'drg. Inge Carolina, lulusan Universitas Trisakti, telah berpraktik sebagai dokter gigi sejak 2006 dengan pengalaman lebih dari 18 tahun dalam menangani berbagai kasus kesehatan gigi masyarakat Indonesia. Berbekal keahlian dan dedikasi tinggi, beliau berkomitmen untuk memberikan perawatan terbaik serta meningkatkan kesadaran akan pentingnya kesehatan gigi. Dengan izin praktik kedua di Jakarta Pusat, beliau mendirikan Caninus Dental House sebagai pusat layanan kesehatan gigi yang mengutamakan profesionalisme, kenyamanan, dan kualitas bagi setiap pasien',
+    'founder_biography2' => 'Garry Gaven adalah seorang profesional dengan lebih dari 10 tahun pengalaman di bidang manajemen bisnis, hukum, dan kepemimpinan strategis. Saat ini menjabat sebagai Director of Business, Legal & Compliance di PT Lumbung Dana Indonesia, ia memadukan keahlian hukum dan wawasan bisnis untuk membangun tata kelola yang etis, meningkatkan kinerja tim, serta memastikan kepatuhan regulasi. Pengalamannya mencakup fintech, real estate, dan F&B, termasuk peran penting di Lippo Group dan sebagai CEO PT Graha Mulia Prima. Dengan berbagai sertifikasi profesional di bidang legal, risk management, dan fintech, Garry dikenal sebagai pemimpin yang adaptif, berintegritas, dan visioner dalam menghadapi tantangan industri modern.',
     'vision' => 'Visi',
     'mission' => 'Misi',
     'vision and mission' => 'Visi dan Misi',

@@ -89,6 +89,126 @@
         footer {
             box-shadow: inset 0px 8px 8px rgba(0, 0, 0, 0.2);
         }
+
+        /* Footer spacing improvements */
+        footer .container {
+            padding-top: 3rem !important;
+            padding-bottom: 3rem !important;
+        }
+
+        footer .row > div {
+            margin-bottom: 2rem;
+        }
+
+        footer .address,
+        footer .contact,
+        footer .follow-us-on {
+            margin-bottom: 2rem;
+        }
+
+        footer .list-unstyled li {
+            margin-bottom: 1rem;
+        }
+
+        footer .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem !important;
+            padding-bottom: 1.5rem !important;
+        }
+
+        /* Responsive footer spacing */
+        @media (max-width: 767.98px) {
+            footer .container {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+            
+            footer .row > div {
+                margin-bottom: 1.5rem;
+            }
+            
+            footer .address,
+            footer .contact,
+            footer .follow-us-on {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Footer logo spacing improvements */
+        footer .col-lg-2 {
+            padding-right: 2rem !important;
+        }
+
+        footer .col-lg-5:first-of-type {
+            padding-left: 1rem !important;
+        }
+
+        /* Responsive logo spacing */
+        @media (max-width: 991.98px) {
+            footer .col-lg-2 {
+                padding-right: 1.5rem !important;
+            }
+            
+            footer .col-lg-5:first-of-type {
+                padding-left: 0.5rem !important;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            footer .col-lg-2 {
+                padding-right: 1rem !important;
+            }
+            
+            footer .col-lg-5:first-of-type {
+                padding-left: 0 !important;
+            }
+        }
+
+        /* Mobile navbar spacing improvements */
+        @media (max-width: 991.98px) {
+            .navbar-nav {
+                padding: 1rem 0;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 0.75rem 0;
+                margin: 0.25rem 0;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .navbar-nav .nav-link:last-child {
+                border-bottom: none;
+            }
+            
+            .navbar-nav .dropdown {
+                margin: 0.5rem 0;
+            }
+            
+            .navbar-nav .btn-radius {
+                margin: 0.5rem 0;
+                text-align: center;
+                display: block;
+            }
+            
+            .navbar-nav .dropdown-toggle {
+                width: 100%;
+                text-align: left;
+                margin: 0.5rem 0;
+            }
+            
+            .navbar-nav .dropdown-menu {
+                border: none;
+                box-shadow: none;
+                background: transparent;
+                margin: 0;
+                padding: 0 0 0 1rem;
+            }
+            
+            .navbar-nav .dropdown-item {
+                padding: 0.5rem 0;
+                margin: 0.25rem 0;
+            }
+        }
     </style>
 </head>
 
@@ -205,7 +325,7 @@
     <footer style="background-color: #FFFF">
         <div class="container px-5 py-md-5 py-0">
             <div class="row">
-                <div class="col-12 col-lg-2 col-md-2">
+                <div class="col-12 col-lg-3 col-md-3">
                     <img src="{{ asset('img/logo.png') }}" width="100" alt="logo" class="mt-5">
                 </div>
                 <div class="col-12 col-lg-5 col-md-5 mt-3">
@@ -240,23 +360,23 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-12 col-lg-5 col-md-5 mt-3">
+                <div class="col-12 col-lg-4 col-md-4 mt-3">
                     <p><u><b>{{ __('messages.clinic_name') }}</b></u></p>
                     <ul class="list-unstyled">
                         <li class="mt-0">
-                            <a href="" class="d-flex align-items-center text-decoration-none">
+                            <a href="/about-us" class="d-flex align-items-center text-decoration-none">
                                 @include('components.icons.about')
                                 <b class="ms-2">{{ __('messages.about_us') }}</b>
                             </a>
                         </li>
                         <li class="mt-2">
-                            <a href="" class="d-flex align-items-center text-decoration-none">
+                            <a href="/services" class="d-flex align-items-center text-decoration-none">
                                 @include('components.icons.service')
                                 <b class="ms-2">{{ __('messages.service') }}</b>
                             </a>
                         </li>
                         <li class="mt-2">
-                            <a href="" class="d-flex align-items-center text-decoration-none">
+                            <a href="/membership" class="d-flex align-items-center text-decoration-none">
                                 @include('components.icons.membership')
                                 <b class="ms-2">{{ __('messages.membership') }}</b>
                             </a>
