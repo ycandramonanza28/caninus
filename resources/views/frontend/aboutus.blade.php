@@ -208,21 +208,31 @@
             }
         }
 
-        /* Consistent image height for founder images in carousel */
+        /* Konsistensi rasio & pencegahan distorsi (Safari/Chrome) */
         .founder-image {
-            height: 400px !important;
-            width: 300px !important;
+            aspect-ratio: 3 / 4;
+            width: clamp(200px, 28vw, 300px) !important;
+            height: auto !important;
             object-fit: cover !important;
             border-radius: 10% !important;
             box-shadow: 1px 2px 5px rgb(105, 105, 105) !important;
+            display: block;
         }
 
         /* Consistent styling for all carousel images */
         .carousel-image {
-            height: 250px !important;
+            aspect-ratio: 3 / 4;
             width: 100% !important;
+            height: auto !important;
             object-fit: cover !important;
             border-radius: 8px !important;
+            display: block;
+        }
+
+        /* Batasi lebar kartu di desktop agar konsisten antar browser */
+        #carouselExampleCaptionsDesktop .card {
+            width: 320px !important;
+            max-width: 100% !important;
         }
 
         /* Mobile card adjustments to prevent image cropping */
@@ -233,11 +243,7 @@
                 margin: 0 auto !important;
             }
             
-            .carousel-image {
-                height: 180px !important;
-                width: 100% !important;
-                object-fit: cover !important;
-            }
+            .carousel-image { height: auto !important; }
         }
 
         @media (max-width: 575.98px) {
@@ -247,9 +253,7 @@
                 margin: 0 auto !important;
             }
             
-            .carousel-image {
-                height: 150px !important;
-            }
+            .carousel-image { height: auto !important; }
         }
 
         @media (max-width: 480px) {
@@ -259,9 +263,7 @@
                 margin: 0 auto !important;
             }
             
-            .carousel-image {
-                height: 130px !important;
-            }
+            .carousel-image { height: auto !important; }
         }
 
         /* Mobile text sizing for Meet Our Dentist section */
@@ -299,14 +301,9 @@
 
         /* Responsive image height adjustments */
         @media (max-width: 991.98px) {
-            .founder-image {
-                height: 350px !important;
-                width: 250px !important;
-            }
+            .founder-image { width: 250px !important; height: auto !important; }
             
-            .carousel-image {
-                height: 220px !important;
-            }
+            .carousel-image { height: auto !important; }
 
             /* iPad spacing improvements */
             .group-banner .row {
@@ -323,14 +320,9 @@
         }
 
         @media (max-width: 767.98px) {
-            .founder-image {
-                height: 300px !important;
-                width: 200px !important;
-            }
+            .founder-image { width: 200px !important; height: auto !important; }
             
-            .carousel-image {
-                height: 200px !important;
-            }
+            .carousel-image { height: auto !important; }
 
             /* Mobile spacing improvements */
             .group-banner .row {
@@ -347,14 +339,9 @@
         }
 
         @media (max-width: 575.98px) {
-            .founder-image {
-                height: 250px !important;
-                width: 180px !important;
-            }
+            .founder-image { width: 180px !important; height: auto !important; }
             
-            .carousel-image {
-                height: 180px !important;
-            }
+            .carousel-image { height: auto !important; }
         }
     </style>
     <div class="wrapper">

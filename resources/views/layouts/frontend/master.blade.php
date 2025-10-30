@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @env('production')
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    @endenv
     <link rel="shortcut icon" href="{{ asset('img/logo.jpg') }}" type="image/x-icon">
     <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -78,6 +80,17 @@
             border-radius: 20px;
             border: none;
             box-shadow: 2px 2px 2px 2px #cbcbcb;
+        }
+
+        /* Normalisasi perilaku gambar agar konsisten (Safari vs Chrome) */
+        img {
+            max-width: 100%;
+            height: auto;
+            image-orientation: none;
+        }
+        /* Safari-only safeguard */
+        @supports (-webkit-hyphens: none) and (not (hyphens: none)) {
+            img { image-orientation: none; transform: rotate(0) scale(1); }
         }
 
         .list-unstyled a {
