@@ -22,7 +22,7 @@
                         <div class="row justify-content-around">
                             <div class="col-6">
                                 <a href="{{ route('medical.history.edit', $history->id) }}" class="btn btn-primary"> <i class='bx bx-edit'></i></a>
-                                <button class="btn btn-success"><i class='bx bx-download'></i></button>
+                                {{-- <button class="btn btn-success"><i class='bx bx-download'></i></button> --}}
                             </div>
                             <div class="col-6 d-flex justify-end">
                                 <form action="{{ route('medical.history.destroy', $history->id) }}" method="POST" onsubmit="return confirmDelete(event)">

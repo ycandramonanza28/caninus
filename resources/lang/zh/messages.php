@@ -18,6 +18,7 @@ return [
     'copyright_notice' => '版权所有 © Caninus Dental House 2025。保留所有权利',
     'founder' => '创始人',
     'founder_biography' => 'Inge Carolina 博士，毕业于 Trisakti 大学，自 2006 年以来一直从事牙科工作，拥有 18 年以上的经验，处理印度尼西亚各种牙科健康问题。凭借卓越的专业知识和高度的奉献精神，她致力于提供最优质的护理，并提高人们对口腔健康重要性的认识。在雅加达中部获得第二个执业许可后，她创立了 Caninus Dental House 作为一个牙科健康中心，强调专业精神、舒适度和高质量的服务，致力于每一位患者的福祉',
+    'founder_biography2' => 'Garry Gaven 是一位在企业管理、法律合规与战略领导方面拥有十多年经验的专业人士。现任 印尼 Lumbung Dana 公司业务、法律与合规总监，他将法律专长与商业智慧相结合，推动公司治理、团队绩效提升与法规遵循。其职业经历涵盖金融科技、不动产及餐饮业，曾在力宝集团及 PT Graha Mulia Prima 首席执行官等职位中发挥重要作用。拥有多项法律、风险管理及金融科技专业认证，加里以其诚信、适应力与战略眼光而闻名，是当今充满挑战的商业环境中的卓越领导者。',
     'vision' => '愿景',
     'mission' => '使命',
     'vision and mission' => '愿景和使命',
@@ -30,9 +31,24 @@ return [
     'faq title1' => 'Caninus Dental House 的想法从何而来？',
     'faq desc1' => 'Caninus”的概念诞生于 2021 年，是 Garry Gaven 和 drg 梦想的实现。 Inge Carolina 致力于打造高品质牙科诊所。自同年起，“Caninus Indonesia”名称已在知识产权总局正式注册，这体现了我们致力于提供最佳牙科保健服务的承诺。',
     'faq title2' => 'Caninus Dental House 的宗旨',
-    'faq desc2' => '',
+    'faq desc2' => 'Caninus Dental House 致力于成为一个注重舒适感、现代技术和专业服务的牙科护理解决方案。我们通过友好、教育性强、并具高标准的医疗与美学方式，来建立大众对牙科治疗的信任。',
     'faq title3' => 'Caninus Dental House 的发展历程和成就',
-    'faq desc3' => '',
+    'faq desc3' => '自2021年成立以来，Caninus Dental House 已为成千上万的患者提供了各种牙科护理服务。随着发展的步伐，Caninus 不断壮大，开设了第一家分店，扩展了包括数字微笑设计在内的服务，逐渐成为本地区的知名牙科推荐诊所。我们还积极参与各类教育活动，并与专业医疗人员合作，不断提升服务质量。',
     'login' => '登录您的账户',
-    'Sign_In' => '登入'
+    'Sign_In' => '登入',
+    'square1' => '由拥有十多年经验的牙医处理',
+    'square2' => '采用最新技术，确保安全、舒适和高效的治疗',
+    'square3' => '干净、无菌且舒适的诊所，带来愉快的治疗体验',
+    'service1' => '牙齿填充',              // Tooth Filling
+    'service2' => '拔牙',                  // Tooth Extraction
+    'service3' => '洗牙',                  // Scaling
+    'service4' => '牙齿美白',              // Teeth Whitening
+    'service5' => '假牙',                  // Dentures
+    'service6' => '根管治疗',              // Root Canal Treatment
+    'service7' => '牙齿种植',              // Dental Implants
+    'ourservice' => "我们的服务",
+    'aboutus' => "关于我们",
+    "bannermember" => "加入 Caninus 会员！",
+    "alwaysmembership" => "一定赚，一定笑！",
+    "privacycaninusdental" => "卡尼纳斯牙科隐私政策"
 ];

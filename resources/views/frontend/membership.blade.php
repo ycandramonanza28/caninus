@@ -9,12 +9,40 @@
         .btn-join {
             font-size: 23px
         }
+
+        .carousel-caption #bannermember {
+            margin-top: -20%;
+            /* persentase supaya relatif ke tinggi gambar */
+            font-size: clamp(20px, 8vw, 50px);
+            /* min 20px, max 100px, scaling otomatis */
+        }
+
+        @media (max-width: 575.98px) {
+            #joinmembership{
+                margin-top: 30px !important;
+                margin-left: -120px;
+                position: relative;
+                justify-content: center !important;
+            }
+
+            .carousel-caption #bannermember {
+                font-size: 15px;
+                /* bisa disesuaikan agar tetap pas di HP */
+            }
+            .carousel-caption span{
+                font-size: 10px !important;
+            }
+        }
     </style>
     <div class="wrapper">
         <div id="carouselExample" class="carousel slide mt-1">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="{{ asset('img/Banner membership.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                    <div class="carousel-caption" id="joinmembership">
+                        <h2 class="fw-bold" id="bannermember">{!! __('messages.bannermember') !!}</h2>
+                        <span class="subbannermember">{!! __('messages.alwaysmembership') !!}</span>
+                    </div>
                 </div>
             </div>
         </div>
